@@ -2,15 +2,9 @@
 <html>
 
     <head>
-    <!-- Latest compiled and minified CSS -->
-
-          <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="">
+  
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-        <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
@@ -25,6 +19,7 @@
 
             .imagende{
               text-align:right;
+              margin-right: 20px;
             }
             .form-control{
               width:80%;
@@ -59,7 +54,7 @@
     
     <body>
         
-        <div id="container">
+                <div id="container">
             <nav class="navbar navbar-default">
               <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -70,7 +65,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                   </button>
-                  <a class="navbar-brand" href="#">Bienvenido [USUARIO]</a>
+                  <a class="navbar-brand" href="#">Bienvenido {{ usuario }}</a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -116,42 +111,46 @@
             
            
            <div class="container">
-    <h1 class="recientes">Agregar nueva vacante</h1>
-    <hr class="featurette-divider">
+            <h1 class="recientes">Agregar nueva vacante</h1>
+            <hr class="page-divider">
 
-      <div class="row featurette">
-       
-        <div class="col-sm-7" >
+              
                
-                <form >
-                  <div class="form-group">
-                   <label for="titulo">Nombre de la vacante:</label>
-                    <input type="text" class="form-control" name="titulo" id="titulo">
-                  </div>
-                   <div class="form-group">
-                   <label for="imagen">Agregar Imagen: </label>
-                   <input type="file" name="imagen" id="imagen">
-                   </div>
-    
+                <div class="col-sm-7" >
+                       
+                  <form >
                     <div class="form-group">
-                    <label for="descripcion">Descripción:</label>
-                    <input type="text" class="inputDescripcion" name="titulo" id="descripcion">
+                      <label for="titulo">Nombre de la vacante:</label>
+                      <input type="text" class="form-control" name="titulo" id="titulo">
                     </div>
-                   <div class="form-group">
-                   <label>Agregar ubicación:</label>
-                  <div id="map-canvas"></div>
-                  </div>
-                  <input type="submit" class="btn">
-                </form>
 
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" src="http://placehold.it/500x500" alt="Generic placeholder image">
-          <h6 class="imagende">Agregar una imagen </h6>
-        </div>
+                    <div class="form-group">
+                      <label for="imagen">Agregar Imagen: </label>
+                      <input type="file" name="imagen" id="imagen">
+                    </div>
+            
+                    <div class="form-group">
+                      <label for="descripcion">Descripción:</label>
+                      <input type="text" class="inputDescripcion" name="titulo" id="descripcion">
+                    </div>
+
+                    <div class="form-group">
+                      <label>Agregar ubicación:</label>
+                      <div id="map-canvas"></div>
+                    </div>
+
+                    <input type="submit" class="btn" value="Subir">
+                  </form>
+
+                </div>
+
+                <div class="col-md-5">
+                  <img class="featurette-image img-responsive center-block" src="http://placehold.it/400x400" alt="">
+                  <h4 class="imagende">Agregar una imagen </h4>
+                </div>
        
           
-      </div>
+              
 
 
 

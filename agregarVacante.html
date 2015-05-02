@@ -122,23 +122,27 @@
       <div class="row featurette">
        
         <div class="col-sm-7" >
-                <h4 >Nombre de la vacante:<br><br>
+               
                 <form >
-                <div class="form-group">
-                <input type="text" class="form-control" >
-                </div>
-                </form></h4>
-             <h4 >Descripción:<br><br>
-                <form >
-                <div class="form-group">
-                <input type="text" class="inputDescripcion" >
-                </div>
-                </form></h4>  
-                <h4 >Agregar ubicación:<br><br>
-                <form >
-                <div id="map-canvas"></div>
-                </form></h4> 
-                <button style="align:right" type="button" class="btn btn-info btn-lg ">Publicar</button>    
+                  <div class="form-group">
+                   <label for="titulo">Nombre de la vacante:</label>
+                    <input type="text" class="form-control" name="titulo" id="titulo">
+                  </div>
+                   <div class="form-group">
+                   <label for="imagen">Agregar Imagen: </label>
+                   <input type="file" class="form-control" name="imagen" id="imagen">
+                   </div>
+    
+                    <div class="form-group">
+                    <label for="descripcion">Descripción:</label>
+                    <input type="text" class="inputDescripcion" name="titulo" id="descripcion">
+                    </div>
+                   <div class="form-group">
+                   <label>Agregar ubicación:</label>
+                  <div id="map-canvas"></div>
+                  </div>
+                  <input type="submit" class="btn">
+                </form>
 
         </div>
         <div class="col-md-5">

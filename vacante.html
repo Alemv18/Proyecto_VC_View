@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+    <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script src="https://hpneo.github.io/gmaps/prettify/prettify.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+        
+        <script src="gmaps.js">
+        </script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="styles.css">
+        
+        <title>Proyecto VC</title>
+        <script>
+        var map;
+        $(document).ready(function(){
+          prettyPrint();
+          map = new GMaps({
+            div: '#map',
+            lat: -12.043333,
+            lng: -77.028333
+          });
+        });
+        </script>
+    </head>
+    
+    <body>
+        
+        <div id="container">
+            <nav class="navbar navbar-default">
+              <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="#">Bienvenido {{ usuario }}</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                  <ul class="nav navbar-nav">
+                    <li class="active"><a href="#"> Inicio<span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">Puntaje</a></li>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Vacantes<span class="caret"></span></a>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Recientes</a></li>
+                        <li><a href="#">Populares</a></li>
+                        <li><a href="#">Terminadas</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Subir vacante!</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Aplicar aleatoriamente</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Busqueda">
+                    </div>
+                    <button type="submit" class="btn btn-default">Enviar</button>
+                  </form>
+                  <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Contacto</a></li>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Cuenta <span class="caret"></span></a>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Perfil</a></li>
+                        <li><a href="#">Configuración</a></li>
+                        <li><a href="#">Actividad Reciente</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Salir</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+            
+            
+            
+            
+            <div class="container">
+                <h1 class="recientes">{{ vacante.nombre }}</h1>
+                
+                <div class="row">
+                    <div class="col-md-8">
+                        
+
+                        <h2> {{ vacante.descripcion }} </h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce malesuada varius tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse interdum purus ac tempus finibus. Integer ut velit nisi. Nulla lobortis ultrices magna fringilla tristique. Praesent laoreet magna lorem, id cursus lorem tempus at. Quisque suscipit egestas tellus, eu commodo sapien tincidunt eu.</p>
+                        
+                        
+            <hr class="tweets-divider">
+
+                        <h2>{{ vacante.contacto }}</h2>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <ul>
+                                    <li>Correo:</li>
+                                    <li>Sitio web:</li>
+                                    <li>Facebook:</li>
+                                    <li>Twitter:</li>
+                                    <li>Telefono:</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-8">
+                                <ul>
+                                    <li>ejemplo@correo.com</li>
+                                    <li><a href="#">www.ejemplo.com</a></li>
+                                    <li><a href="#">/Ejemplo</a></li>
+                                    <li><a href="#">@ejemplo</a></li>
+                                    <li>5-555-555</li>
+                                </ul>
+                            </div>
+                        </div>
+            <hr class="page-divider">
+
+                    <h2>Mapa</h2>
+                    <div id="map"></div>
+                        
+                    </div>
+                    <div class="col-md-4">
+                        
+                        <h2> Imagenes </h2>
+                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+              
+              <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+              </ol>
+
+              <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                  <img src="http://placehold.it/450x450" alt="...">
+                  <div class="carousel-caption">
+                    <h2>Imagen de demo</h2>
+                  </div>
+                </div>
+                <div class="item">
+                  <img src="http://placehold.it/450x450" alt="...">
+                  <div class="carousel-caption">
+                    <h2>Imagen dos de demo</h2>
+                  </div>
+                </div>
+                <div class="item">
+                  <img src="http://placehold.it/450x450" alt="...">
+                  <div class="carousel-caption">
+                    <h2>Imagen Tres de demo</h2>
+                  </div>
+                </div>
+
+              </div>
+              <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+              </a>
+              <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Siguiente</span>
+              </a>
+            </div>  
+                    <h3>Listo para ayudar?</h3>
+                    <form>
+                        <select>
+                            <option>Aplicar como:</option>
+                            <option>Anonimo</option>
+                            <option>{{ usuario.nombre }}</option>
+                        </select>
+                        <input type="submit" value="Aplicar">
+                    </form>     
+                    </div>
+                     
+                </div>
+            </div>
+           
+            
+            
+            
+            
+        </div>
+    </body>
+    
+</html>
